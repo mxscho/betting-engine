@@ -1,5 +1,7 @@
 # BettingEngine
 
+[![Build Status](https://dev.azure.com/mxscho/betting-engine/_apis/build/status/mxscho.betting-engine?branchName=master)](https://dev.azure.com/mxscho/betting-engine/_build/latest?definitionId=1&branchName=master)
+
 This .NET Standard library can be used to calculate odds or outcomes of
 [parimutuel bets](https://en.wikipedia.org/wiki/Parimutuel_betting).
 Therefore, it works like a *totalizator* for different types of bets,
