@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BettingEngine.Betting", "src\BettingEngine.Betting\BettingEngine.Betting.csproj", "{16FDC2A4-565F-4B4E-B419-AA4A7DE27830}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BettingEngine.Betting.Tests", "src\BettingEngine.Betting.Tests\BettingEngine.Betting.Tests.csproj", "{DDC430E7-7A2F-4D79-9414-A9D569594B71}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BettingEngine.Example", "src\BettingEngine.Example\BettingEngine.Example.csproj", "{7385AB12-310F-4024-9F97-FA80A98A27A9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{16FDC2A4-565F-4B4E-B419-AA4A7DE27830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{16FDC2A4-565F-4B4E-B419-AA4A7DE27830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{16FDC2A4-565F-4B4E-B419-AA4A7DE27830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{16FDC2A4-565F-4B4E-B419-AA4A7DE27830}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDC430E7-7A2F-4D79-9414-A9D569594B71}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDC430E7-7A2F-4D79-9414-A9D569594B71}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDC430E7-7A2F-4D79-9414-A9D569594B71}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDC430E7-7A2F-4D79-9414-A9D569594B71}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7385AB12-310F-4024-9F97-FA80A98A27A9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7385AB12-310F-4024-9F97-FA80A98A27A9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7385AB12-310F-4024-9F97-FA80A98A27A9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7385AB12-310F-4024-9F97-FA80A98A27A9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
