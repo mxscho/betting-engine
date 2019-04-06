@@ -1,5 +1,6 @@
 namespace BettingEngine.Betting
 {
+    /// <inheritdoc />
     public class Stake : IStake
     {
         internal Stake(decimal value)
@@ -7,6 +8,7 @@ namespace BettingEngine.Betting
             Value = value;
         }
 
+        /// <inheritdoc />
         public decimal Value { get; }
     }
 }

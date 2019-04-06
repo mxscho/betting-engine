@@ -4,10 +4,27 @@ using System.Linq;
 
 namespace BettingEngine.Betting
 {
+    /// <summary>
+    /// Represents a multiple-choice bet.
+    /// Multiple-choice bets are bets where the actual result can be a set of individual results.
+    /// Wagers which include at least one of these individual results in their expected results are considered winners.
+    /// </summary>
     public class MultipleChoiceBet : IBet<IResultSet>
     {
         private readonly MultipleChoicePool _multipleChoicePool;
 
+        /// <summary>
+        /// Creates a new instance of <see cref="MultipleChoiceBet"/> for a set of individual results.
+        /// The <see cref="PossibleResults"/> for this bet are equal to all proper subsets of the specified
+        /// set of individual results.
+        /// </summary>
+        /// <param name="availableResults">All individual results.</param>
+        /// <exception cref="ArgumentNullException">
+        /// Occurs if <paramref name="availableResults"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Occurs if <paramref name="availableResults"/> contains duplicates or <c>null</c> values.
+        /// </exception>
         public MultipleChoiceBet(IEnumerable<IResult> availableResults)
         {
             if (availableResults == null) throw new ArgumentNullException(nameof(availableResults));
@@ -24,8 +41,10 @@ namespace BettingEngine.Betting
             _multipleChoicePool = new MultipleChoicePool(PossibleResults);
         }
 
+        /// <inheritdoc />
         public IEnumerable<IResultSet> PossibleResults { get; }
 
+        /// <inheritdoc />
         public IWager<IResultSet> AddExpectedResults(IResultSet expectedResults, decimal stakeValue)
         {
             if (expectedResults == null) throw new ArgumentNullException(nameof(expectedResults));
@@ -47,6 +66,7 @@ namespace BettingEngine.Betting
             return wager;
         }
 
+        /// <inheritdoc />
         public decimal GetOdds(IResultSet expectedResults, IResultSet actualResults)
         {
             if (expectedResults == null) throw new ArgumentNullException(nameof(expectedResults));
@@ -92,6 +112,7 @@ namespace BettingEngine.Betting
             return odds;
         }
 
+        /// <inheritdoc />
         public IOutcome GetOutcome(IWager<IResultSet> wager, IResultSet actualResults)
         {
             if (wager == null) throw new ArgumentNullException(nameof(wager));

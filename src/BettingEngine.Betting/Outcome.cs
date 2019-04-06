@@ -2,6 +2,7 @@ using System;
 
 namespace BettingEngine.Betting
 {
+    /// <inheritdoc />
     public class Outcome : IOutcome
     {
         private readonly decimal _winnings;
@@ -12,8 +13,10 @@ namespace BettingEngine.Betting
             _winnings = winnings;
         }
 
+        /// <inheritdoc />
         public OutcomeType Type { get; }
 
+        /// <inheritdoc />
         public decimal Winnings
         {
             get

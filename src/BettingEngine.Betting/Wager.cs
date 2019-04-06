@@ -1,5 +1,6 @@
 namespace BettingEngine.Betting
 {
+    /// <inheritdoc />
     public class Wager<TResults> : IWager<TResults>
     {
         private readonly IBet<TResults> _bet;
@@ -11,10 +12,13 @@ namespace BettingEngine.Betting
             Stake = stake;
         }
 
+        /// <inheritdoc />
         public TResults ExpectedResults { get; }
 
+        /// <inheritdoc />
         public IStake Stake { get; }
 
+        /// <inheritdoc />
         public IOutcome GetOutcome(TResults actualResults)
         {
             return _bet.GetOutcome(this, actualResults);
