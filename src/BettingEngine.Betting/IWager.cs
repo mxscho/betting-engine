@@ -1,3 +1,5 @@
+using System;
+
 namespace BettingEngine.Betting
 {
     /// <summary>
@@ -23,6 +25,13 @@ namespace BettingEngine.Betting
         /// <returns>
         /// An instance of <see cref="IOutcome"/> which represents the outcome for specific actual results.
         /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Occurs if <paramref name="actualResults"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Occurs if <paramref name="actualResults"/> is not one of the values of
+        /// <see cref="IBet{TResults}.PossibleResults"/>.
+        /// </exception>
         IOutcome GetOutcome(TResults actualResults);
     }
 }

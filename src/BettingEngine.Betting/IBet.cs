@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace BettingEngine.Betting
@@ -19,6 +20,14 @@ namespace BettingEngine.Betting
         /// <param name="expectedResults">The expected results.</param>
         /// <param name="stakeValue">The stake's value.</param>
         /// <returns>A new wager which is used to track outcome and potential winnings later on.</returns>
+        /// <exception cref="ArgumentNullException">
+        /// Occurs if <paramref name="expectedResults"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Occurs if <paramref name="expectedResults"/> is not one of the values of
+        /// <see cref="PossibleResults"/> or
+        /// if <paramref name="stakeValue"/> is less than or equal to zero.
+        /// </exception>
         IWager<TResults> AddExpectedResults(TResults expectedResults, decimal stakeValue);
 
         /// <summary>
@@ -31,6 +40,13 @@ namespace BettingEngine.Betting
         /// This value times a wager's stake represents the amount of winnings a wager with the specified
         /// expected results is able to claim from the pool if the specified actual results happen.
         /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Occurs if <paramref name="expectedResults"/> or <paramref name="actualResults"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Occurs if <paramref name="expectedResults"/> or <paramref name="actualResults"/> is not one of the values of
+        /// <see cref="PossibleResults"/>.
+        /// </exception>
         decimal GetOdds(TResults expectedResults, TResults actualResults);
 
         /// <summary>
@@ -42,6 +58,14 @@ namespace BettingEngine.Betting
         /// An instance of <see cref="IOutcome"/> which represents the outcome of the specified wager
         /// for specific actual results.
         /// </returns>
+        /// <exception cref="ArgumentNullException">
+        /// Occurs if <paramref name="wager"/> or <paramref name="actualResults"/> is <c>null</c>.
+        /// </exception>
+        /// <exception cref="ArgumentException">
+        /// Occurs if <paramref name="wager"/> is not part of this bet or
+        /// if <paramref name="actualResults"/> is not one of the values of
+        /// <see cref="PossibleResults"/>.
+        /// </exception>
         IOutcome GetOutcome(IWager<TResults> wager, TResults actualResults);
     }
 }
