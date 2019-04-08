@@ -5,9 +5,9 @@ using System.Linq;
 namespace BettingEngine.Betting
 {
     /// <summary>
-    /// Represents a single-choice bet.
-    /// Single-choice bets are bets where the actual result can be exactly one individual result.
-    /// Wagers which have exactly the same individual result as their expected result are considered winners.
+    ///     Represents a single-choice bet.
+    ///     Single-choice bets are bets where the actual result can be exactly one individual result.
+    ///     Wagers which have exactly the same individual result as their expected result are considered winners.
     /// </summary>
     public class SingleChoiceBet : IBet<IResult>
     {
@@ -15,14 +15,14 @@ namespace BettingEngine.Betting
         private readonly IDictionary<IWager<IResult>, IWager<IResultSet>> _wagers;
 
         /// <summary>
-        /// Creates a new instance of <see cref="SingleChoiceBet"/> for a set of possible results.
+        ///     Creates a new instance of <see cref="SingleChoiceBet" /> for a set of possible results.
         /// </summary>
         /// <param name="possibleResults">The possible results.</param>
         /// <exception cref="ArgumentNullException">
-        /// Occurs if <paramref name="possibleResults"/> is <c>null</c>.
+        ///     Occurs if <paramref name="possibleResults" /> is <c>null</c>.
         /// </exception>
         /// <exception cref="ArgumentException">
-        /// Occurs if <paramref name="possibleResults"/> contains duplicates or <c>null</c> values.
+        ///     Occurs if <paramref name="possibleResults" /> contains duplicates or <c>null</c> values.
         /// </exception>
         public SingleChoiceBet(IEnumerable<IResult> possibleResults)
         {

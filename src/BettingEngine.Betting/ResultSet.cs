@@ -11,13 +11,13 @@ namespace BettingEngine.Betting
         private readonly Lazy<IEnumerable<IResultSet>> _subsets;
 
         /// <summary>
-        /// Creates a new instance of <see cref="ResultSet"/> for a specific set of individual <see cref="IResult"/>
-        /// instances.
+        ///     Creates a new instance of <see cref="ResultSet" /> for a specific set of individual <see cref="IResult" />
+        ///     instances.
         /// </summary>
         /// <param name="results">The set of individual results.</param>
-        /// <exception cref="ArgumentNullException">Occurs if <paramref name="results"/> is <c>null</c>.</exception>
+        /// <exception cref="ArgumentNullException">Occurs if <paramref name="results" /> is <c>null</c>.</exception>
         /// <exception cref="ArgumentException">
-        /// Occurs if <paramref name="results"/> contains duplicates or <c>null</c> values.
+        ///     Occurs if <paramref name="results" /> contains duplicates or <c>null</c> values.
         /// </exception>
         public ResultSet(IEnumerable<IResult> results)
         {
@@ -38,13 +38,13 @@ namespace BettingEngine.Betting
                 .ToList()));
         }
 
-        /// <inheritdoc />
-        public IEnumerable<IResult> Results { get; }
-
         /// <summary>
-        /// Gets all proper subsets of this <see cref="ResultSet"/>.
+        ///     Gets all proper subsets of this <see cref="ResultSet" />.
         /// </summary>
         public IEnumerable<IResultSet> Subsets => _subsets.Value;
+
+        /// <inheritdoc />
+        public IEnumerable<IResult> Results { get; }
 
         /// <inheritdoc />
         public bool Equals(IResultSet other)
